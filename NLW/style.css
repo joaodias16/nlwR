@@ -1,0 +1,324 @@
+/* GERAL */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --primary-color: hsl(170, 100%, 26%);
+  --heady-color: hsl(210, 11%, 15%);
+  --paragraph: hsl(210, 9%, 31%);
+  --brand-beige:  hsl(39, 100%, 97%);
+  --brand-light: hsl(148, 23%, 89%);
+  font-size: 62.5%; /* 1rem= 10px */
+  --nav-height: 7.2rem;
+}
+
+html {
+scroll-behavior: smooth;
+}
+
+html,
+body {
+width: 100%;
+height: 100%;
+}
+
+body {
+  font-family: 'DM Sans';
+font-size: 1.6rem;
+text-align: center;
+overflow: overlay;
+background-color: hsl(180, 14%, 97%);
+}
+
+.wrapper {
+margin-inline: auto;
+padding-inline: 2.4rem ;
+  width: 37.5rem ;
+}
+
+ul{
+  list-style: none;
+}
+
+section {
+  padding-block: 10rem;
+}
+
+/* NAVIGATION */
+
+nav {
+  display: flex;
+
+
+  height: var(--nav-height);
+
+  position: fixed;
+  top: 0;
+  width: 100vw;
+  
+  z-index: 100;
+}
+
+nav .wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+nav.scroll {
+  background-color: var(--primary-color);
+  
+}
+
+nav.scroll .logo path {
+  fill: white;
+}
+nav.scroll button path {
+  stroke: white;
+}
+
+nav button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* HEADER */
+header::before {
+  content: "";
+  width: 100%;
+  height: calc(108rem + var(--nav-height));
+  background-color: hsl(148, 23%, 89%);
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+#home {
+  padding-top: calc(4.1rem + var(--nav-height)); 
+}
+
+#home h4 {
+  font-size: 1.4rem;
+  margin-bottom: 1.6rem;
+  color: var(--primary-color);
+}
+
+#home h1 {
+  font-size: 3.4rem;
+  color: var(--heady-color);
+  line-height: 130%;
+  margin-bottom: 2.4rem;
+}
+
+#home p {
+  font-size: 1.6rem;
+  line-height: 2.4rem;
+  font-weight: 400;
+  margin-bottom: 3.2rem;
+  color: var(--primary-color);
+
+}
+
+#home button {
+
+  background: var(--primary-color);
+  border: none;
+  border-radius: 4rem;
+  margin-bottom: 6rem;
+  height: 6.2rem;
+  width: 26.3rem;
+  color: white;
+  font-size: 1.4rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.6rem;
+  margin-left: auto;
+  margin-right: auto;
+  }
+
+  #home img {
+  display: block;
+  margin-inline: auto;
+  object-position: 0 2rem;
+  width: 26.4rem;
+  }
+
+.pricesContainer {
+  background-color: var(--brand-beige);
+  padding: 4rem 8rem;
+  border-radius: 0.6rem;
+  border: 1px solid var(--brand-light);
+  border-radius: 0.6rem;
+  height: min-content ;
+}
+
+.stat p{
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  line-height: 150%;
+  margin: 0;
+}
+
+
+.stat h3 {
+  font-size: 4.8rem;
+  color: var(--heady-color); 
+  line-height: 6.24rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem; 
+}
+
+
+/* MENU-EXPANDED */
+
+body.menu-expanded {
+  overflow:hidden ;
+}
+
+body.menu-expanded> :not(nav) {
+  display: none;
+} 
+
+.menu,
+.close-menu,
+body.menu-expanded .open-menu {
+  opacity: 0;
+  visibility: hidden;
+
+}
+
+body.menu-expanded .menu,
+body.menu-expanded .close-menu{
+    opacity: 1;
+    visibility: visible;
+
+}
+
+.menu {
+  transform: translateY(100%);
+}
+
+body.menu-expanded .menu {
+  position:fixed ;
+  top: 0;
+  left: 0;
+  background-color: var(--primary-color);
+
+  width: 100vw;
+  height: 100vw;
+
+  padding-top: var(--nav-height);
+
+  transition: transform 30s0ms;
+  transform: translateY(0);
+}
+
+
+.menu ul:nth-child(1) {
+  display:flex ;
+  flex-direction: column;
+  gap: 4.8rem;
+  margin-top: 6rem;
+  font-weight: 700;
+  font-size: 2.4rem;
+  line-height: 3.1rem;
+}
+
+.menu ul li a {
+  color: white;
+  text-decoration: none;
+}
+
+.social-links {
+  display: flex;
+  gap: 3.2rem;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu .button{
+
+  background: white;
+  border-radius: 4rem;
+  font-weight: 700;
+  font-size: 1.8rem;
+  line-height: 2.3rem;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  color:var(--primary-color);
+
+  display: inline-block;
+  padding: 1.6rem 3.2rem;
+
+  margin-top: 4.8rem;
+  margin-bottom: 8rem;
+  }
+
+body.menu-expanded .logo,
+body.menu-expanded button {
+  position: relative;
+  z-index: 100;
+
+}
+
+body.menu-expanded .logo path {
+  fill: white;
+  }
+  body.menu-expanded button path {
+  stroke: white;
+  }
+
+
+/* SERVICES */
+
+#services .cards{
+  display: flex;
+  flex-direction: column;
+  gap: 3.2rem;
+
+}
+
+#services .card {
+  padding: 2.4rem;
+  text-align: left;
+  background: white;
+  border: 1px solid var(--brand-light);
+  border-radius: 0.6rem;
+  }
+
+#services header h4 {
+font-size: 1.4rem;
+line-height: 150%;
+letter-spacing: 0.08rem;
+color: var(--primary-color);
+
+text-transform: uppercase;
+margin: bottom 1.6rem;
+}
+
+#services header h2 {
+
+font-size: 3rem;
+line-height: 3.9rem;
+
+color: var(--heady-color);
+
+margin-bottom: 6rem;
+}
+
+
+
+#services .card h3 {
+margin-block: 1.6rem;
+}
